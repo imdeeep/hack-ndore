@@ -1,0 +1,10 @@
+[
+    {
+        "question": "What is AI?",
+        "answer": "AI stands for Artificial Intelligence."
+    },
+    {
+        "question": "What is Node.js?",
+        "answer": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine."
+    }
+]
