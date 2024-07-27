@@ -6,17 +6,15 @@ import React from 'react';
 import { PiChatCircleDotsFill } from "react-icons/pi";
 import Link from 'next/link';
 
-
 const page = () => {
   return (
     <>
-    <Link href="" className='fixed z-[999] bottom-8 right-3 bg-blue-600 p-2 rounded-full'>
+    <Link href="/chat" className='fixed z-[999] bottom-10 right-4 bg-blue-600 p-2 rounded-full'>
       <PiChatCircleDotsFill size={30} color='white'/>
 </Link>
-      <Header />
       
       {/* Page 1 */}
-      <div className="relative w-full h-[90vh] overflow-hidden">
+      <div className="relative w-full h-[70vh] overflow-hidden">
         <video autoPlay loop muted className="w-full h-full object-cover select-none">
           <source src="/hero.mp4" type="video/mp4" />
         </video>
@@ -27,7 +25,6 @@ const page = () => {
         <Cards /> 
       </div>
 
-      <Footer />
       </>
   )
 }
