@@ -9,9 +9,9 @@ const Assets = () => {
       id: 1,
       name: 'Headquarters',
       employees: 50,
-      location: 'New York',
-      budgetAllotment: '$200,000',
-      budgetSpending: '$150,000',
+      location: 'Indore',
+      budgetAllotment: '₹2,00,000',
+      budgetSpending: '₹10,00,000',
       rating: '4.7/5',
     },
   ]);

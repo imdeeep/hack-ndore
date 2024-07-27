@@ -103,9 +103,9 @@ const Header = () => {
                   Assets
                 </div>
               </Link>
-              <Link href="/">
+              <Link href="/Admin">
                 <div className="hover:underline text-white transition-colors py-2 md:py-0 text-xl font-semibold">
-                  Demo
+                  Admin
                 </div>
               </Link>
               <Link href="/chat">
@@ -128,9 +128,9 @@ const Header = () => {
                   Login
                 </div>
               </Link> */}
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded shadow-md transition duration-300">
+              <a href="/Login" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded shadow-md transition duration-300">
                     login
-                  </button>
+                  </a>
             </div>
           </nav>
         </div>
