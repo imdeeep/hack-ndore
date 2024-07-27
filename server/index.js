@@ -5,10 +5,10 @@ const connectDB = require("./config/db");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const chatRoutes = require("./routes/chatRoutes");
-const officeRoutes = require("./routes/office");  // New import
-const movableAssetRoutes = require("./routes/movableAssets");  // New import
-const immovableAssetRoutes = require("./routes/immovableAsset");  // New import
-
+const officeRoutes = require("./routes/office");  
+const movableAssetRoutes = require("./routes/movableAssets");  
+const immovableAssetRoutes = require("./routes/immovableAsset");  
+const userRoutes = require("./routes/User"); 
 connectDB();
 
 // Middlewares
@@ -23,6 +23,6 @@ app.get("/", (req, res) => {
 app.use('/api/chat', chatRoutes);
 app.use('/api/offices', officeRoutes);  
 app.use('/api/movableAssets', movableAssetRoutes);  
-app.use('/api/immovableAssets', immovableAssetRoutes);  // New route
-
+app.use('/api/immovableAssets', immovableAssetRoutes);  
+app.use('/api/users', userRoutes);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
