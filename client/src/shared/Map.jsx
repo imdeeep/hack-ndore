@@ -1,37 +1,107 @@
-import React from 'react';
+"use client"
+import { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-
-// Fix for missing marker icons with Webpack
 import L from 'leaflet';
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import 'leaflet/dist/leaflet.css';
+import io from 'socket.io-client';
 
+// Fix Leaflet marker icons issue
 delete L.Icon.Default.prototype._getIconUrl;
-
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x,
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
+  iconRetinaUrl: 'leaflet/dist/images/marker-icon-2x.png',
+  iconUrl: 'leaflet/dist/images/marker-icon.png',
+  shadowUrl: 'leaflet/dist/images/marker-shadow.png',
 });
 
-const Map = () => {
+const UserMap = () => {
+  const [users, setUsers] = useState([]);
+  const [socket, setSocket] = useState(null);
+  const [currentPosition, setCurrentPosition] = useState([51.505, -0.09]);
+  const [connectedUsers, setConnectedUsers] = useState([]);
+
+  useEffect(() => {
+    // Get the current location
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        setCurrentPosition([latitude, longitude]);
+      });
+    }
+
+    // Initialize socket connection
+    const newSocket = io('https://locator-ikrw.onrender.com/'); // Change this to your backend URL
+    setSocket(newSocket);
+
+    // Listen for user location updates
+    newSocket.on('locationUpdate', (data) => {
+      setUsers((prevUsers) => {
+        const updatedUsers = prevUsers.filter(user => user.id !== data.id);
+        return [...updatedUsers, data];
+      });
+    });
+
+    // Listen for connection requests
+    newSocket.on('connectionRequest', ({ fromUser, fromSocketId }) => {
+      // Prompt user to accept the connection request
+      if (window.confirm(`Accept connection request from ${fromUser.name}?`)) {
+        newSocket.emit('acceptConnectionRequest', fromSocketId);
+      }
+    });
+
+    // Listen for connection acceptance
+    newSocket.on('connectionAccepted', ({ user, socketId }) => {
+      setConnectedUsers((prevConnectedUsers) => [...prevConnectedUsers, socketId]);
+    });
+
+    // Register the current user
+    newSocket.emit('registerUser', { name: 'Your Name', lat: currentPosition[0], lng: currentPosition[1] });
+
+    // Cleanup on component unmount
+    return () => newSocket.close();
+  }, [currentPosition]);
+
+  useEffect(() => {
+    if (socket) {
+      // Update location every 3 seconds
+      const updateLocation = () => {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            const { latitude, longitude } = position.coords;
+            socket.emit('updateLocation', { lat: latitude, lng: longitude });
+          });
+        }
+      };
+
+      const interval = setInterval(updateLocation, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [socket]);
+
+  const sendConnectionRequest = (userId) => {
+    if (socket) {
+      socket.emit('sendConnectionRequest', userId);
+    }
+  };
+
   return (
-    <div className="h-[100vh] w-full">
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} className="h-full">
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        />
-        <Marker position={[51.505, -0.09]}>
+    <MapContainer center={currentPosition} zoom={10} className="w-full h-[80vh]">
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
+      {users.map(user => (
+        <Marker key={user.id} position={[user.lat, user.lng]}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            {user.name}
+            <button onClick={() => sendConnectionRequest(user.id)}>Connect</button>
           </Popup>
         </Marker>
-      </MapContainer>
-    </div>
+      ))}
+      <Marker position={currentPosition}>
+        <Popup>Your current location</Popup>
+      </Marker>
+    </MapContainer>
   );
 };
 
-export default Map;
+export default UserMap;
