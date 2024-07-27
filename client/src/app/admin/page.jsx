@@ -1,9 +1,9 @@
-import Forum from '@/shared/Forum'
+import Admin from '@/shared/Admin'
 import React from 'react'
 
 const page = () => {
   return (
-    <Forum/>
+    <Admin/>
   )
 }
 

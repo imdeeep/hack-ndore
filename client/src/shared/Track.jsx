@@ -14,7 +14,7 @@ const Track = () => {
             <p className="">Budget Allotment : </p>
             <p className="">Budget Spending : </p>
             <p className="">Rating : </p>
-            <Link href="" className='px-1 bg-green-500 rounded'>Track</Link>
+            <Link href="/map" className='px-1 bg-green-500 rounded'>Track</Link>
         </div>
         
     </div>
