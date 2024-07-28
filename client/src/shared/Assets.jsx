@@ -7,12 +7,53 @@ const Assets = () => {
   const [offices, setOffices] = useState([
     {
       id: 1,
-      name: 'Headquarters',
+      name: 'Indore Municipal Corporation, Indore',
       employees: 50,
       location: 'Indore',
       budgetAllotment: '₹2,00,000',
       budgetSpending: '₹10,00,000',
       rating: '4.7/5',
+      directionsLink: 'https://www.google.com/maps/dir//22.7226818,75.8621202/@22.722591,75.779591,12z?entry=ttu',
+    },
+    {
+      id: 2,
+      name: 'Nagar Parishad Betma',
+      employees: 50,
+      location: 'Indore',
+      budgetAllotment: '₹2,00,000',
+      budgetSpending: '₹10,00,000',
+      rating: '4.7/5',
+      directionsLink: 'https://www.google.com/maps/dir//22.7102,75.7072/@22.7101216,75.6244955,12z?entry=ttu',
+    },
+    {
+      id: 3,
+      name: 'Nagar Parishad Depalpur',
+      employees: 50,
+      location: 'Indore',
+      budgetAllotment: '₹2,00,000',
+      budgetSpending: '₹10,00,000',
+      rating: '4.7/5',
+      directionsLink: 'https://www.google.com/maps/dir//22.9866,75.5192',
+    },
+    {
+      id: 4,
+      name: 'Nagar Parishad Goutampura',
+      employees: 50,
+      location: 'Indore',
+      budgetAllotment: '₹2,00,000',
+      budgetSpending: '₹10,00,000',
+      rating: '4.7/5',
+      directionsLink: 'https://www.google.com/maps/dir//22.9866,75.5192',
+    },
+    {
+      id: 5,
+      name: 'Nagar Parishad Hatod',
+      employees: 50,
+      location: 'Indore',
+      budgetAllotment: '₹2,00,000',
+      budgetSpending: '₹10,00,000',
+      rating: '4.7/5',
+      directionsLink: 'https://www.google.com/maps/dir//22.9866,75.5192',
     },
   ]);
 
@@ -22,7 +63,7 @@ const Assets = () => {
   const filteredOffices = offices.filter((office) =>
     office.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-5">
       {/* Search Box */}
@@ -105,10 +146,15 @@ const Assets = () => {
                   </label>
                 </div>
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-between">
                 <Link href="/assetdetails">
                   <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow-md transition duration-300">
                     Click to track
+                  </button>
+                </Link>
+                <Link href={office.directionsLink}>
+                  <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded shadow-md transition duration-300">
+                    Directions
                   </button>
                 </Link>
               </div>
@@ -121,4 +167,5 @@ const Assets = () => {
 };
 
 export default Assets;
+
 

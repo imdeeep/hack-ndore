@@ -74,9 +74,9 @@ const OverviewAndServices = () => {
             </div>
 
             <div className="flex justify-center mt-8">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
+              <a href="#" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
                 View All
-              </button>
+              </a>
             </div>
           </div>
         </div>

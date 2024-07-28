@@ -280,7 +280,7 @@ const Office = () => {
           <div className="flex space-x-4 mb-4 md:mb-0">
             <button
               onClick={() => setOffice("office")}
-              className={`px-4 py-2 rounded-md transition duration-300 ${
+              className={`px-4 py-2 rounded-md transition duration-300 ₹{
                 office === "office" ? "bg-blue-600 text-white" : "bg-white text-blue-600 hover:bg-blue-100"
               }`}
             >
@@ -288,7 +288,7 @@ const Office = () => {
             </button>
             <button
               onClick={() => setOffice("assets")}
-              className={`px-4 py-2 rounded-md transition duration-300 ${
+              className={`px-4 py-2 rounded-md transition duration-300 ₹{
                 office === "assets" ? "bg-blue-600 text-white" : "bg-white text-blue-600 hover:bg-blue-100"
               }`}
             >
@@ -299,7 +299,7 @@ const Office = () => {
             <div className="relative">
               <input
                 type="text"
-                placeholder={`Search for ${office || 'items'}...`}
+                placeholder={`Search for ₹{office || 'items'}...`}
                 className="pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -318,8 +318,8 @@ const Office = () => {
             {renderCard("Office Name", {
               Employees: "100",
               Location: "New York",
-              "Budget Allotment": "$1,000,000",
-              "Budget Spending": "$750,000",
+              "Budget Allotment": "₹1,000,000",
+              "Budget Spending": "₹750,000",
               Rating: "4.5/5",
             })}
             {/* Add more office cards here */}

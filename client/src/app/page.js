@@ -6,6 +6,7 @@ import Cards from '@/components/Cards';
 import { PiChatCircleDotsFill } from "react-icons/pi";
 import Chat from '@/shared/Chat';
 import OverviewAndServices from '@/components/overview';
+import Municipalities from '@/components/Municipalities';
 
 const page = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -44,6 +45,7 @@ const page = () => {
       </div>
 
       <OverviewAndServices />
+      <Municipalities />
 
       </>
   )

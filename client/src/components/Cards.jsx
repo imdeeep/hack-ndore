@@ -76,7 +76,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const Card = ({ heading, content, onButtonClick, isSelected, index }) => {
   return (
     <div className="w-full sm:w-1/2 md:w-1/3 p-4">
-      <div className={`bg-white shadow-xl rounded-lg p-6 flex flex-col ${isSelected ? 'border-2 border-gray-200' : ''}`}>
+      <div className={`bg-white mx-2 shadow-xl rounded-lg p-6 flex flex-col ${isSelected ? 'border-2 border-gray-200' : ''}`}>
         <h2 className="text-black text-2xl font-bold mb-4">{heading}</h2>
         <p className="text-gray-700 mb-4 flex-grow">{content}</p>
         <button 
@@ -102,7 +102,7 @@ const Cards = () => {
 
   const cardData = [
     {
-      heading: "Track the vehicle",
+      heading: "Track kyo karu vehicle",
       content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum blanditiis pariatur sequi magni."
     },
     {
@@ -120,8 +120,8 @@ const Cards = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-wrap -mx-4">
+    <div className="container flex gap-[10px]  mx-auto px-4 py-8">
+      <div className="flex flex-wrap -mx-4 ">
         {cardData.map((card, index) => (
           <Card 
             key={index}
