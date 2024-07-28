@@ -1,0 +1,97 @@
+Municipality Information:
+
+ 1. Indore Municipal Corporation, Indore
+ Address: Jail Road, Nagar Nigam, Netaji Subash Marg, Nagar Nigam, Indore, Madhya Pradesh 452007
+ Employees: 50
+ Location: Indore
+ Budget Allotment: ₹20,000,000
+ Budget Spending: ₹1,000,000
+ Rating: 4.7/5
+ Email: imcindore[at]mpurban[dot]gov[dot]in
+ Phone: Not provided
+ Pincode: 452007
+ Website Link: [Click here]()
+
+ 2. Nagar Parishad Betma
+ Address: Nagar Parishad Betma, Indore, Madhya Pradesh 453001
+ Employees: 50
+ Location: Indore
+ Budget Allotment: ₹20,000,000
+ Budget Spending: ₹1,000,000
+ Rating: 4.7/5
+ Email: cmohetma[at]mpurban[dot]gov[dot]in
+ Phone: 07322260224
+ Pincode: 453001
+ Website Link: [Click here]()
+
+ 3. Nagar Parishad Depalpur
+ Address: Nagar Parishad Depalpur, District Indore, Madhya Pradesh 452001
+ Employees: 50
+ Location: Indore
+ Budget Allotment: ₹20,000,000
+ Budget Spending: ₹1,000,000
+ Rating: 4.7/5
+ Email: cmodepalpur[at]mpurban[dot]gov[dot]in
+ Phone: 0732222023
+ Pincode: 452001
+ Website Link: [Click here]()
+
+ 4. Nagar Parishad Gautampura
+ Address: Nagar Parishad Gautampura, District Indore, Madhya Pradesh 453220
+ Employees: 50
+ Location: Indore
+ Budget Allotment: ₹20,000,000
+ Budget Spending: ₹1,000,000
+ Rating: 4.7/5
+ Email: cmogautampura[at]mpurban[dot]gov[dot]in
+ Phone: 07322230252
+ Pincode: 453220
+ Website Link: [Click here]()
+
+ 5. Nagar Parishad Rau
+ Address: Nagar Parishad Rau, District Indore, Madhya Pradesh 453331
+ Employees: 50
+ Location: Indore
+ Budget Allotment: ₹20,000,000
+ Budget Spending: ₹1,000,000
+ Rating: 4.7/5
+ Email: cmorau[at]mpurban[dot]gov[dot]in
+ Phone: 0731248258
+ Pincode: 453331
+ Website Link: [Click here]()
+
+ 6. Nagar Parishad Sanwer
+ Address: Nagar Parishad Sanwer, District Indore, Madhya Pradesh 452001
+ Employees: 50
+ Location: Indore
+ Budget Allotment: ₹20,000,000
+ Budget Spending: ₹1,000,000
+ Rating: 4.7/5
+ Email: cmosanwer[at]mpurban[dot]gov[dot]in
+ Phone: 07312200270
+ Pincode: 452001
+ Website Link: [Click here]()
+
+ Downtown Office Assets
+
+ Movable Assets:
+ Vehicles: Assigned to John Doe
+ Projector: Assigned to Jane Smith
+ Helmets: Assigned to Mike Johnson
+ Printer: Assigned to Emily Davis
+
+ NonMovable Assets:
+ Parks
+ Buildings
+ Houses
+
+ Common Queries and Responses:
+
+ Q: How many employees work in any specific municipality?
+   A: Each municipality has 50 employees.
+  
+ Q: What is the total budget?
+   A: The total budget allotment for each municipality is ₹20,000,000.
+  
+ Q: What is the total money spent?
+   A: The total budget spending for each municipality is ₹1,000,000.
